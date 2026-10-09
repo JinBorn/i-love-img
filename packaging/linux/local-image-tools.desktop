@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Local Image Tools
+Name[zh_CN]=本地图像工具
+Comment=Compress, resize and convert local images offline
+Comment[zh_CN]=离线批量压缩、缩放和转换本地图片
+Exec=local-image-tools
+Icon=local-image-tools
+Terminal=false
+Categories=Graphics;RasterGraphics;
+StartupNotify=true

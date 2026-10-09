@@ -1,0 +1,184 @@
+[
+  {
+    "group": "egui",
+    "file": "LICENSE-MIT",
+    "url": "https://raw.githubusercontent.com/emilk/egui/af96e0373c18477b77236e2bfc89735af007b1c2/LICENSE-MIT",
+    "sha256": "95ca92f5f8ea5231f1580b3a2a799e8260af3114b900e1def5355a7f44bcf60c",
+    "bytes": 1092
+  },
+  {
+    "group": "egui",
+    "file": "LICENSE-APACHE",
+    "url": "https://raw.githubusercontent.com/emilk/egui/af96e0373c18477b77236e2bfc89735af007b1c2/LICENSE-APACHE",
+    "sha256": "8173d5c29b4f956d532781d2b86e4e30f83e6b7878dce18c919451d6ba707c90",
+    "bytes": 10850
+  },
+  {
+    "group": "clipboard-win",
+    "file": "LICENSE",
+    "url": "https://raw.githubusercontent.com/DoumanAsh/clipboard-win/3b27cf2bfd1adcfa6e0264eb51c1025ddaf0f342/LICENSE",
+    "sha256": "c9bff75738922193e67fa726fa225535870d2aa1059f91452c411736284ad566",
+    "bytes": 1338
+  },
+  {
+    "group": "gl_generator",
+    "file": "LICENSE",
+    "url": "https://raw.githubusercontent.com/brendanzab/gl-rs/ea503e8d5fb6d73c6030e6191ce738cd3bf3433e/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "group": "khronos_api",
+    "file": "LICENSE",
+    "url": "https://raw.githubusercontent.com/brendanzab/gl-rs/f150967b1c44ae888e6676f93f639ebc82771bdc/LICENSE",
+    "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+    "bytes": 11358
+  },
+  {
+    "group": "naga",
+    "file": "LICENSE.MIT",
+    "url": "https://raw.githubusercontent.com/gfx-rs/wgpu/060a779fc5f56560215ea84bda70278cbbd31e72/LICENSE.MIT",
+    "sha256": "c7fea58d1cfe49634cd92e54fc10a9d871f4b275321a4cd8c09e449122caaeb4",
+    "bytes": 1078
+  },
+  {
+    "group": "naga",
+    "file": "LICENSE.APACHE",
+    "url": "https://raw.githubusercontent.com/gfx-rs/wgpu/060a779fc5f56560215ea84bda70278cbbd31e72/LICENSE.APACHE",
+    "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "bytes": 10173
+  },
+  {
+    "group": "wgpu-platform-deps",
+    "file": "LICENSE.MIT",
+    "url": "https://raw.githubusercontent.com/gfx-rs/wgpu/8c2c2ce2034e1588037755d6c8bd28c360ebcc04/LICENSE.MIT",
+    "sha256": "c7fea58d1cfe49634cd92e54fc10a9d871f4b275321a4cd8c09e449122caaeb4",
+    "bytes": 1078
+  },
+  {
+    "group": "wgpu-platform-deps",
+    "file": "LICENSE.APACHE",
+    "url": "https://raw.githubusercontent.com/gfx-rs/wgpu/8c2c2ce2034e1588037755d6c8bd28c360ebcc04/LICENSE.APACHE",
+    "sha256": "a6cba85bc92e0cff7a450b1d873c0eaa2e9fc96bf472df0247a26bec77bf3ff9",
+    "bytes": 10173
+  },
+  {
+    "group": "profiling",
+    "file": "LICENSE-MIT",
+    "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-MIT",
+    "sha256": "c8167fdeeed46d3f244d3f85c5bf998ce889343691c32be2c61a8bc4b5c08333",
+    "bytes": 1093
+  },
+  {
+    "group": "profiling",
+    "file": "LICENSE-APACHE",
+    "url": "https://raw.githubusercontent.com/aclysma/profiling/8271551172eb6fa4cba47369aedd93790c623df9/LICENSE-APACHE",
+    "sha256": "10d30a673cd5e9349bdc02aeb48f14b3386d27d0da32df8f0a555d4aa16aa551",
+    "bytes": 10818
+  },
+  {
+    "group": "mozjpeg-sys",
+    "file": "README.ijg",
+    "url": "https://raw.githubusercontent.com/mozilla/mozjpeg/c2bc3511d547870c4f67bbafda5fba794ba71f7f/README.ijg",
+    "sha256": "4b7b9f8c03bb8d60270dfd12684e70ab21e4abfd27e73905cd1a7c4cae6f5cdb",
+    "bytes": 12732
+  },
+  {
+    "group": "mozjpeg-sys",
+    "file": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/mozilla/mozjpeg/c2bc3511d547870c4f67bbafda5fba794ba71f7f/LICENSE.md",
+    "sha256": "60c756742db3ad1913304e8b13f0e86e22e51adb50cc0b3333c163f7e45ceec1",
+    "bytes": 5213
+  },
+  {
+    "group": "mozjpeg-sys",
+    "file": "README.md",
+    "url": "https://raw.githubusercontent.com/mozilla/mozjpeg/c2bc3511d547870c4f67bbafda5fba794ba71f7f/README.md",
+    "sha256": "dd3f431d7d71a37bab78dc645a2dae05d4ca496fb881ba95ca673a23ae51bcc0",
+    "bytes": 2511
+  },
+  {
+    "group": "hexf-parse",
+    "file": "LICENSE-CC0.txt",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/legalcode.txt",
+    "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499",
+    "bytes": 7048
+  },
+  {
+    "group": "hexf-parse",
+    "file": "README.md",
+    "url": "https://raw.githubusercontent.com/lifthrasiir/hexf/4225763d744183d720f575ae96d04161b4d08ea0/README.md",
+    "sha256": "425cb6fae64b193ab5342094774bc66b7d7b9276c7c43d9ac7ccca7063f4ed5b",
+    "bytes": 4386
+  },
+  {
+    "group": "objc2-b4167b58",
+    "file": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/b4167b582b2f75f9a1be75495c41b765344fd03c/LICENSE.md",
+    "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+    "bytes": 1339
+  },
+  {
+    "group": "objc2-8852b424",
+    "file": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/8852b424193ca41602281b3d7540d7c8ed51e49a/LICENSE.md",
+    "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+    "bytes": 1339
+  },
+  {
+    "group": "objc2-d7d2fa23",
+    "file": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/d7d2fa23ceaa5e6096c923b081040e5d81b3b9df/LICENSE.md",
+    "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+    "bytes": 1339
+  },
+  {
+    "group": "objc2-7b1abfd7",
+    "file": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/7b1abfd750a2cacaea71d6a56ecfb83cb7de560b/LICENSE.md",
+    "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+    "bytes": 1339
+  },
+  {
+    "group": "objc2-8d214f54",
+    "file": "LICENSE.md",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/8d214f5477365ffcbcbb7de058c86ed9a518efb7/LICENSE.md",
+    "sha256": "7f976f7e9cb2d87df7230606feb932c3f21ac0e664045a775b600046ff850c54",
+    "bytes": 1339
+  },
+  {
+    "group": "objc2-4fc083f1",
+    "file": "LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/4fc083f1c6d6784577e38b0ee8dbd344481e2fd2/LICENSE.txt",
+    "sha256": "e353f37b12aefbb9f9b29490e837cfee05d9bda70804b3562839a3285c1df1e5",
+    "bytes": 1066
+  },
+  {
+    "group": "objc2-5237cbf0",
+    "file": "LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/5237cbf081d04ef75a1f6a207b4018e7c1ae7438/LICENSE.txt",
+    "sha256": "e353f37b12aefbb9f9b29490e837cfee05d9bda70804b3562839a3285c1df1e5",
+    "bytes": 1066
+  },
+  {
+    "group": "objc2-e282618b",
+    "file": "LICENSE.txt",
+    "url": "https://raw.githubusercontent.com/madsmtm/objc2/e282618be4c3a3b9542957e0c8540e9588472ce8/LICENSE.txt",
+    "sha256": "e353f37b12aefbb9f9b29490e837cfee05d9bda70804b3562839a3285c1df1e5",
+    "bytes": 1066
+  },
+  {
+    "group": "dispatch",
+    "file": "LICENSE-MIT-reference.txt",
+    "url": "https://raw.githubusercontent.com/spdx/license-list-data/v3.27.0/text/MIT.txt",
+    "sha256": "b05785f9f18e6716bab63424b11454513b9943a222595b70411009202fc592b5",
+    "bytes": 1078
+  },
+  {
+    "group": "dispatch",
+    "file": "Cargo.toml",
+    "url": "https://raw.githubusercontent.com/SSheldon/rust-dispatch/82d6c7a5b75dc0c71c3f46f87bb6c16a476f7748/Cargo.toml",
+    "sha256": "05c60b829931ef7f1f130735843c11f5cf9cc69546eca5fc941d014781c68e31",
+    "bytes": 472
+  }
+]

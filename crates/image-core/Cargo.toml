@@ -1,0 +1,32 @@
+[package]
+name = "local-image-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Memory-budgeted offline image processing"
+
+[dependencies]
+serde.workspace = true
+thiserror.workspace = true
+image.workspace = true
+gif.workspace = true
+fast_image_resize.workspace = true
+tempfile.workspace = true
+walkdir = "2"
+sha2 = "0.10"
+same-file = "1"
+oxipng = { version = "=10.2.1", default-features = false }
+mozjpeg = "=0.10.13"
+mozjpeg-sys = { version = "2.2.3", features = ["unwinding"] }
+webp = "=0.3.1"
+moxcms = "=0.7.9"
+png = "=0.18.1"
+flate2 = "1"
+crc32fast = "1"
+color_quant = "1.1"
+libc = "0.2"
+
+[dev-dependencies]
+serde_json.workspace = true

@@ -1,0 +1,28 @@
+# Local builds, toolchains, packages and generated verification data.
+/target/
+/.tools/
+/dist/
+/dist-*/
+/artifacts/
+/.venv/
+
+# Portable preferences and processed images are user data.
+/Data/
+/Output/
+/output/
+
+# Source-only font downloads; the licensed UI subset is tracked.
+/assets/fonts/*.full.otf
+/assets/fonts/*.full.ttf
+
+# Caches, temporary files and local configuration.
+__pycache__/
+*.py[cod]
+*.tmp
+*.log
+.DS_Store
+Thumbs.db
+Desktop.ini
+.env
+.env.*
+!.env.example

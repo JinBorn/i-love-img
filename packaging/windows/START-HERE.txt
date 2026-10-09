@@ -1,0 +1,33 @@
+本地图像工具 0.2.1 — Windows 便携版
+
+1. 完整解压 ZIP，将整个“Local Image Tools”文件夹复制到 U 盘或可写目录。
+2. 双击 local-image-tools.exe 即可运行。无需安装运行库、编译器、联网或管理员权限。
+3. 保留 portable.flag、libunwind.dll（GNU LLVM 包）、assets 和许可文件。不要只复制 EXE。
+4. 语言与各工具处理偏好保存在程序旁的 Data/settings.json。退出应用后，移动整个文件夹即可带走设置；请在退出后安全弹出 U 盘。
+5. 图片输入与输出目录应分开。默认输出到程序旁的 Output 文件夹。便携模式的相对输出路径以程序目录为基准；选择程序文件夹内的绝对路径也会按相对路径保存，盘符或文件夹位置变化后继续有效。外部绝对路径若在重启时不存在，会提示并恢复为 Output。
+
+在首页选择工具后再导入图片：“压缩图片”保持格式、尺寸和动画；“调整尺寸”保持格式和动画；“转换格式”保持尺寸。每页只设置相关参数。各工具保留本次会话自己的列表和结果，语言、输出位置与递归导入共用。
+需要下一步操作时，选中成功结果并明确选择继续到哪个工具。结果追加到目标工具列表，已有条目保留但取消选择；新传入项被选中。下一步使用目标工具参数，点击开始后才处理。
+顶栏“← 所有工具”可返回首页，旁边菜单可直接切换工具。准备检查时可点击“取消检查”、按 Esc 或直接导航；尚未检查完成的本次续作条目会撤回，旧列表与结果保留。实际处理、导入或文件对话框结束后才能切换。
+
+程序文件夹需可写，才能保存设置；读写失败会提示，不会改存到主机用户配置目录。队列和编辑历史不跨次恢复。Windows 或显卡驱动仍可能自行创建缓存或使用记录。
+升级时使用新文件夹，保留旧版及其 Data。关闭旧版后可复制旧 Data 到新版；0.2.1 沿用 0.2.0 设置结构；读取 0.1.x 设置后会在成功保存时升级结构，不要反向覆盖 0.1.x Data。
+命令行用户运行 lit.exe --help；命令行相对路径按启动命令时的工作目录解析。
+更多说明见 README.md。项目采用 MIT 许可，第三方许可见 dependency-licenses 和 THIRD_PARTY_NOTICES.md。
+
+Local Image Tools 0.2.1 — Windows portable edition
+
+1. Extract the entire ZIP and copy the complete “Local Image Tools” folder to a USB drive or another writable location.
+2. Run local-image-tools.exe. No runtime/compiler installation, network connection or administrator permission is needed.
+3. Keep portable.flag, libunwind.dll (GNU LLVM packages), assets and license files together. Copy the whole folder when moving the app.
+4. Language and each tool's processing preferences are stored beside the app in Data/settings.json. Close the app before moving the folder or safely ejecting the USB drive.
+5. Keep input and output folders separate. Output defaults to the Output folder beside the app. GUI relative output paths use the app folder as their base. Absolute output paths selected inside it are saved as relative paths, following folder moves and drive-letter changes. If an external absolute location is missing on restart, the app shows a notice and resets output to Output.
+
+Choose a tool on Home before importing: Compress preserves format, dimensions and animation; Resize preserves format and animation; Convert preserves dimensions. Each page shows relevant controls only. Tools retain their own queues/results during this session; language, output location and recursive import are shared.
+For another operation, select successful results and explicitly choose the next tool. Outputs are appended to its queue; existing rows stay but become unselected, and new rows are selected. The next step uses the destination tool's settings and runs only after you start it.
+Use “← All tools” to return Home or the adjacent menu to switch tools. During preparation checks, choose “Cancel checking”, press Esc or navigate away; only the unfinished transfer's new rows are removed, preserving previous queues/results. Actual processing, imports and open file dialogs must finish before switching.
+
+The application folder must be writable to save preferences. Read/write failures are reported without falling back to the host user's configuration directory. Queues and editing history are not restored. Windows and graphics drivers may still create their own caches or usage records.
+Upgrade into a new folder and preserve the old version and its Data. After closing the old app, copy its Data into the new folder if needed. Version 0.2.1 keeps the 0.2.0 settings structure. Loading 0.1.x settings upgrades that structure on a successful save; do not copy that Data back over 0.1.x.
+For the CLI, run lit.exe --help. CLI relative paths use the command's working directory.
+See README.md for details. Project code is MIT-licensed; dependency notices are in dependency-licenses and THIRD_PARTY_NOTICES.md.

@@ -1,0 +1,33 @@
+[workspace]
+members = ["crates/image-core", "crates/desktop", "crates/cli"]
+resolver = "2"
+
+[workspace.package]
+version = "0.2.1"
+edition = "2024"
+rust-version = "1.89"
+license = "MIT"
+authors = ["Local Image Tools contributors"]
+repository = "https://github.com/JinBorn/i-love-img"
+
+[workspace.dependencies]
+local-image-core = { path = "crates/image-core" }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+thiserror = "2"
+image = { version = "=0.25.10", default-features = false, features = ["jpeg", "png", "webp", "gif"] }
+gif = "0.14"
+fast_image_resize = { version = "=6.1.0", features = ["image"] }
+tempfile = "3"
+
+[profile.release]
+lto = "thin"
+codegen-units = 1
+strip = "debuginfo"
+panic = "unwind"
+
+[profile.dev]
+opt-level = 1
+
+[profile.dev.package."*"]
+opt-level = 2

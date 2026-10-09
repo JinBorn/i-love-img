@@ -1,0 +1,21 @@
+[package]
+name = "local-image-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+description = "Local Image Tools command-line processing and diagnostics"
+
+[[bin]]
+name = "lit"
+path = "src/main.rs"
+
+[dependencies]
+local-image-core.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+image.workspace = true
+gif.workspace = true
+clap = { version = "4", features = ["derive"] }
+ctrlc = "3"

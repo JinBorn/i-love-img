@@ -1,0 +1,120 @@
+name: Build, test and package
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      windows_installer:
+        description: Also build the optional Windows per-user NSIS installer
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  CARGO_TERM_COLOR: always
+  RUST_TOOLCHAIN: 1.99.0
+  MACOSX_DEPLOYMENT_TARGET: '13.0'
+
+jobs:
+  build:
+    name: ${{ matrix.label }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - label: Windows x64 MSVC
+            runner: windows-2022
+            target: x86_64-pc-windows-msvc
+            artifact: windows-x64
+            rustflags: -C target-feature=+crt-static
+          - label: macOS Intel (13+ deployment target)
+            runner: macos-15-intel
+            target: x86_64-apple-darwin
+            artifact: macos-x64
+            rustflags: ''
+          - label: macOS Apple Silicon (13+ deployment target)
+            runner: macos-15
+            target: aarch64-apple-darwin
+            artifact: macos-arm64
+            rustflags: ''
+          - label: Ubuntu 22.04 x64
+            runner: ubuntu-22.04
+            target: x86_64-unknown-linux-gnu
+            artifact: linux-x64
+            rustflags: ''
+    runs-on: ${{ matrix.runner }}
+    env:
+      RUSTFLAGS: ${{ matrix.rustflags }}
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+      - name: Install Linux build and package tools
+        if: runner.os == 'Linux'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential cmake nasm pkg-config libclang-dev libgl1-mesa-dev libx11-dev libxrandr-dev libxi-dev libxcursor-dev libxinerama-dev libxkbcommon-dev libwayland-dev libgtk-3-dev libssl-dev dpkg-dev
+      - name: Install Windows codec tools
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install nasm --yes --no-progress
+          if ($LASTEXITCODE -ne 0) { throw 'Chocolatey tool installation failed.' }
+          'C:\Program Files\NASM' | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+      - name: Fetch optional Windows installer tools
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch' && inputs.windows_installer
+        shell: pwsh
+        run: ./packaging/windows/fetch-nsis.ps1
+      - name: Install macOS codec tools
+        if: runner.os == 'macOS'
+        run: brew install nasm
+      - name: Install pinned Rust toolchain
+        shell: bash
+        run: |
+          rustup toolchain install "$RUST_TOOLCHAIN" --profile minimal --component rustfmt --component clippy --target '${{ matrix.target }}'
+          rustup default "$RUST_TOOLCHAIN"
+          rustc --version --verbose
+          cargo --version
+      - name: Check formatting
+        run: cargo fmt --all -- --check
+      - name: Lint
+        run: cargo clippy --locked --workspace --all-targets --target ${{ matrix.target }} -- -D warnings
+      - name: Test
+        run: cargo test --locked --workspace --target ${{ matrix.target }}
+      - name: Release build
+        run: cargo build --locked --release --workspace --target ${{ matrix.target }}
+      - name: Smoke-test CLI
+        shell: bash
+        run: |
+          suffix=''
+          if [[ '${{ runner.os }}' == Windows ]]; then suffix='.exe'; fi
+          "target/${{ matrix.target }}/release/lit$suffix" --help
+      - name: Package Windows portable ZIP
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $includeInstaller = '${{ inputs.windows_installer }}' -eq 'true'
+          ./scripts/package.ps1 -SkipBuild -Target '${{ matrix.target }}' -Installer:$includeInstaller
+      - name: Package macOS application or Ubuntu deb
+        if: runner.os != 'Windows'
+        shell: bash
+        run: bash scripts/package.sh --skip-build --target '${{ matrix.target }}'
+      - name: Upload unsigned local-distribution artifacts
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: local-image-tools-${{ matrix.artifact }}
+          path: |
+            dist/*.zip
+            dist/*.exe
+            dist/*.dmg
+            dist/*.deb
+            dist/*SHA256SUMS.txt
+            dist/*-files.json
+          if-no-files-found: error
+          retention-days: 14
